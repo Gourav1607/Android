@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:id="@+id/rootLayout"
+    tools:context="com.gourav1607.buttoncolorv.MainActivity">
+
+    <Button
+        android:id="@+id/RedRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Red" />
+
+    <Button
+        android:id="@+id/GreenRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RedRB"
+        android:layout_centerHorizontal="true"
+        android:text="Green" />
+
+    <Button
+        android:id="@+id/BlueRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/GreenRB"
+        android:layout_centerHorizontal="true"
+        android:text="Blue" />
+
+</RelativeLayout>
