@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<Student> values = datasource.getAllStudents();
 
-        ArrayAdapter<Student> adapter = new ArrayAdapter<Student>(this,
-                android.R.layout.simple_list_item_1, values);
+        ArrayAdapter<Student> adapter = new ArrayAdapter<Student>(this, android.R.layout.simple_list_item_1, values);
 
         listView.setAdapter(adapter);
     }

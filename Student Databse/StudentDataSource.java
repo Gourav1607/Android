@@ -17,8 +17,8 @@ public class StudentDataSource {
 
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_NAME,
-            MySQLiteHelper.COLUMN_COLLEGE, MySQLiteHelper.COLUMN_SUBJECT };
+    private String[] allColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_NAME, MySQLiteHelper.COLUMN_COLLEGE,
+            MySQLiteHelper.COLUMN_SUBJECT };
 
     public StudentDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -39,9 +39,8 @@ public class StudentDataSource {
         values.put(MySQLiteHelper.COLUMN_SUBJECT, subject);
 
         long insertId = database.insert(MySQLiteHelper.TABLE_NAME, null, values);
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME,
-                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
-                null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME, allColumns,
+                MySQLiteHelper.COLUMN_ID + " = " + insertId, null, null, null, null);
         cursor.moveToFirst();
         Student newStudent = cursorToStudent(cursor);
         cursor.close();
@@ -57,8 +56,7 @@ public class StudentDataSource {
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME,
-                allColumns, null, null, null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_NAME, allColumns, null, null, null, null, null);
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {

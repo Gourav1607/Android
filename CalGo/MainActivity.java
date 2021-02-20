@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(display);
     }
 
-
     public void updateScreen() {
         textView.setText(display);
     }
@@ -50,12 +49,13 @@ public class MainActivity extends AppCompatActivity {
         Button btn = (Button) v;
         currentOperator = btn.getText().toString();
 
-        // Replace Operator if already in memory... that is... clicked two different ones
+        // Replace Operator if already in memory... that is... clicked two different
+        // ones
         if (operatorMem)
             if (display.charAt(display.length() - 1) == '*' || display.charAt(display.length() - 1) == '/'
                     || display.charAt(display.length() - 1) == '-' || display.charAt(display.length() - 1) == '+') {
                 display = display.substring(0, display.length() - 1);
-            } else { //calculate result when second operator in clicked
+            } else { // calculate result when second operator in clicked
                 String[] operation = display.split(Pattern.quote(currentOperator));
                 if (operation.length < 2)
                     return;
